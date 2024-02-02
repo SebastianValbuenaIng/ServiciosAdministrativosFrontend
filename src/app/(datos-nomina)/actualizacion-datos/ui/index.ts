@@ -1,0 +1,5 @@
+export * from "./InformacionEmpleado"
+export * from "./RedesSociales"
+export * from "./PerfilEmpleado"
+export * from "./PrincipalTabs"
+export * from "./ConsultarExperiencia"
