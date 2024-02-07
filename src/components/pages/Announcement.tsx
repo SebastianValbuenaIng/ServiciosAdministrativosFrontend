@@ -43,7 +43,6 @@ const Announcement = () => {
 
   return (
     <>
-      <div className="w-[1440px] mx-auto m-4">
         <TableAnnouncement
           announcement={Announcement1}
           selectedDataAnnouncemnt={(id, action) => {
@@ -51,7 +50,6 @@ const Announcement = () => {
             setContenModal(action);
           }}
         />
-      </div>
 
       <Modal
         isOpen={showModal}
@@ -64,10 +62,10 @@ const Announcement = () => {
         ></i>
         {contenModal === "info" && (
           <>
-            <h1 className="mb-4 mt-2 text-center text-2xl font-bold text-primary mx-auto justify-center items-center">
+            <h1 className="mb-4 mt-6 md:mt-2 text-center text-2xl font-bold text-primary mx-auto justify-center items-center">
               {selectedRow?.nombre}
             </h1>
-            <section className="flex mx-4 justify-between">
+            <section className="flex flex-wrap mx-4 justify-between">
               <div>
                 <p>
                   <b>ID:</b> {selectedRow?.id}
@@ -109,7 +107,7 @@ const Announcement = () => {
         )}
         {contenModal === "edit" && (
           <>
-            <h1 className="mb-4 mt-2 text-center text-2xl font-bold text-primary mx-auto justify-center items-center">
+            <h1 className="mb-4 mt-6 md:mt-2 text-center text-2xl font-bold text-primary mx-auto justify-center items-center">
               Editar {selectedRow?.nombre}
             </h1>
             <AnnouncementEdit selectedRow={selectedRow}/>
@@ -117,7 +115,7 @@ const Announcement = () => {
         )}
         {contenModal === "person" && (
           <>
-            <h1 className="mb-4 mt-2 text-center text-2xl font-bold text-primary mx-auto justify-center items-center">
+            <h1 className="mb-4 mt-6 md:mt-2 text-center text-2xl font-bold text-primary mx-auto justify-center items-center">
               Aspirantes a {selectedRow?.nombre}
             </h1>
             <AnnouncementRow candidates={candidates} />

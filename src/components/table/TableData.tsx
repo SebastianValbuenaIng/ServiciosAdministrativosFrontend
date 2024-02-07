@@ -92,8 +92,8 @@ const TableData = ({
   if (!loading)
     return (
       <>
-        <section className="overflow-hidden rounded-2xl p-4 soft-shadow">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3">
+        <section className="overflow-hidden rounded-2xl w-[95%] max-w-[1335px] mx-auto p-4 soft-shadow">
+          <div className="flex items-center justify-between mb-3">
             <div className="mb-3 sm:mb-0">
               <button
                 className="w-7 h-7 inline text-default-white rounded-md border border-soft-primary bg-primary transition-all cursor-pointer hover:bg-dark-primary hover:border-primary active:border-dark-primary"
@@ -117,11 +117,11 @@ const TableData = ({
             </button>
           </div>
 
-          <div className="overflow-x-auto overflow-y-hidden">
+          <div className="overflow-x-scroll overflow-y-hidden">
             <table
               className={twMerge(
                 clsx(
-                  "min-w-[1400PX] border-collapse rounded-lg bg-default-white ",
+                  "min-w-[1300px] border-collapse rounded-lg bg-default-white ",
                   className
                 )
               )}
@@ -254,18 +254,15 @@ const TableData = ({
     );
 
   return (
-    <TailSpin
-      height="100"
-      width="100"
-      color="#990000"
-      ariaLabel="tail-spin-loading"
-      radius="1"
-      wrapperStyle={{
-        margin: "20px 0",
-
-        justifyContent: "center",
-      }}
-    />
+    <div className="absolute ml-[40%] lg:ml-[47%] mt-[25%] lg:mt-[7%]  justify-center px-auto items-center ">
+      <TailSpin
+        height="80"
+        width="80"
+        color="#990000"
+        ariaLabel="tail-spin-loading"
+        radius="1"
+      />
+    </div>
   );
 };
 

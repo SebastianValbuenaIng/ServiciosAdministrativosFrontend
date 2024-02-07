@@ -17,7 +17,7 @@ const AnnouncementRow = ({ candidates }: { candidates: candidate[] }) => {
                   {" "}
                   Detalles del aspirante{" "}
                 </p>
-                <div className="flex gap-10 items-center justify-between m-4">
+                <div className="flex flex-wrap gap-3 items-center justify-between mx-4">
                   <div>
                     <p>
                       <b>Nombre: </b> {candidate.nombre_aspirante}
@@ -47,7 +47,7 @@ const AnnouncementRow = ({ candidates }: { candidates: candidate[] }) => {
                     </p>
                   </div>
                 </div>
-                <div className="my-4 mx-10">
+                <div className="my-4 mx-4 md:mx-10">
                     <Textarea
                     classNames={{inputWrapper: "bg-[#ffffff]"}}
                       maxRows={6}
