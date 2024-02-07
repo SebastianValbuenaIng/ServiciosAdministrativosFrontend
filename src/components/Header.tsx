@@ -73,7 +73,7 @@ const Header = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link className="w-full py-2 mx-3 transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0" href={"https://empleados.escuelaing.edu.co/intraeci/AdminConvoca"}>
+                        <Link className="w-full py-2 mx-3 transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0" href={"/announcement"}>
                             Aplicantes convocatorias
                         </Link>
                     </li>
