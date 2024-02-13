@@ -15,7 +15,8 @@ const Announcement = () => {
   const [contenModal, setContenModal] = useState<string>("");
 
   const [selectedId, setSelectedId] = useState<string>("");
-  const [selectedRow, setSelecteRow] = useState<Announcement>(InitialAnnouncement);
+  const [selectedRow, setSelecteRow] =
+    useState<Announcement>(InitialAnnouncement);
   const [selectedAnnouncement, setSelectedAnnouncement] = useState<string>("");
 
   const candidate = candidates.find(
@@ -43,18 +44,20 @@ const Announcement = () => {
 
   return (
     <>
-        <TableAnnouncement
-          announcement={Announcement1}
-          selectedDataAnnouncemnt={(id, action) => {
-            setSelectedId(id);
-            setContenModal(action);
-          }}
-        />
+      <TableAnnouncement
+        announcement={Announcement1}
+        selectedDataAnnouncemnt={(id, action) => {
+          setSelectedId(id);
+          setContenModal(action);
+        }}
+      />
 
       <Modal
         isOpen={showModal}
         setIsOpen={setShowModal}
-        classContainer={contenModal === "edit" ? "max-w-[1200px]" :"max-w-[750px]"}
+        classContainer={
+          contenModal === "edit" ? "max-w-[1000px]" : "max-w-[750px]"
+        }
       >
         <i
           className="bi bi-x absolute text-borders top-2 right-3 hover:text-primary text-3xl transition-all cursor-pointer"
@@ -110,7 +113,7 @@ const Announcement = () => {
             <h1 className="mb-4 mt-6 md:mt-2 text-center text-2xl font-bold text-primary mx-auto justify-center items-center">
               Editar {selectedRow?.nombre}
             </h1>
-            <AnnouncementEdit selectedRow={selectedRow}/>
+            <AnnouncementEdit selectedRow={selectedRow} />
           </>
         )}
         {contenModal === "person" && (

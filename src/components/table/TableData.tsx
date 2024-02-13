@@ -134,7 +134,7 @@ const TableData = ({
                   >
                     {headerGroup.headers.map((header: any) => (
                       <th
-                        className="p-2 text-start text-sm font-bold last:rounded-r-xl"
+                        className="p-2 text-start text-sm font-bold first:rounded-tl-xl last:rounded-xl"
                         key={header.id}
                         colSpan={header.colSpan}
                       >
@@ -157,7 +157,7 @@ const TableData = ({
                         )}
                       </th>
                     ))}
-                    <th className="w-10 p-2 text-center font-bold rounded-r-xl">
+                    <th className="w-10 p-2 text-center font-bold rounded-tr-xl">
                       <i className="bi bi-three-dots"></i>
                     </th>
                   </tr>

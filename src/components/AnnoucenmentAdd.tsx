@@ -1,9 +1,10 @@
 "use client";
 
-import { SelectItem, Textarea } from "@nextui-org/react";
-import Input from "./ui/Input";
-import Select from "./ui/Select";
+import { SelectItem } from "@nextui-org/react";
 import Button from "./Button";
+import InputForm from "./forms/InputForm";
+import SelectForm from "./forms/SelectForm";
+import Textarea from "./forms/TextareaForm";
 
 const AnnouncementAdd = () => {
   return (
@@ -13,53 +14,75 @@ const AnnouncementAdd = () => {
       </p>
       <div className="flex flex-wrap mx-auto items-center justify-between">
         <div className="w-[500px] mx-auto">
-          <Input
+          <InputForm
+            name="names"
+            isRequired
             classNames={{ inputWrapper: "bg-[#ffffff]" }}
             type="string"
-            isRequired
+            onChange={() => {}}
             label="Nombres convocatoría:"
           />
-          <Select
+          <InputForm
             className="mt-2"
-            placeholder="Seleccione tipo de la convocatoria"
-            label="Tipo de convocatoria:"
-          >
-            <SelectItem key={1}>Planta </SelectItem>
-            <SelectItem key={2}>Cátedra </SelectItem>
-          </Select>
-          <Select
+            name="date_start"
+            placeholder="dd/mm/aaaa"
+            onChange={() => {}}
+            classNames={{ inputWrapper: "bg-[#ffffff]" }}
+            type="date"
+            isRequired
+            label="Fecha Inicio:"
+          />
+          <SelectForm
+            classNames={{
+              trigger: "bg-[#ffffff]",
+            }}
+            name=""
             className="mt-2"
             placeholder="Seleccione Periodo de la convocatoria"
+            onChange={() => {}}
             label="Periodo:"
           >
             <SelectItem key={"2023-1"}>2023-1 </SelectItem>
             <SelectItem key={"2023-2"}>2023-2 </SelectItem>
             <SelectItem key={"2024-1"}>2024-1 </SelectItem>
             <SelectItem key={"2024-2"}>2024-1 </SelectItem>
-          </Select>
-          <Input
+          </SelectForm>
+          <InputForm
+            name="person"
             classNames={{ inputWrapper: "bg-[#ffffff]" }}
             className="mt-2"
             type="text"
+            onChange={() => {}}
             isRequired
             label="Persona Responsable:"
           />
-          <Input
+          <InputForm
+            name="director"
             classNames={{ inputWrapper: "bg-[#ffffff]" }}
             className="mt-2"
             type="text"
+            onChange={() => {}}
             isRequired
             label="Director del área:"
           />
         </div>
         <div className="w-[500px] mx-auto">
-          <Input
-            classNames={{ inputWrapper: "bg-[#ffffff]" }}
-            type="date"
-            isRequired
-            label="Fecha Inicio:"
-          />
-          <Input
+          <SelectForm
+            name="type"
+            classNames={{
+              trigger: "bg-[#ffffff]",
+            }}
+            placeholder="Seleccione tipo de la convocatoria"
+            onChange={() => {}}
+            label="Tipo de convocatoria:"
+          >
+            <SelectItem key={1}>Planta </SelectItem>
+            <SelectItem key={2}>Cátedra </SelectItem>
+          </SelectForm>
+          <InputForm
+            name="date_end"
+            onChange={() => {}}
+            placeholder="dd/mm/aaaa"
             classNames={{ inputWrapper: "bg-[#ffffff]" }}
             type="date"
             className="mt-2"
@@ -67,8 +90,10 @@ const AnnouncementAdd = () => {
             label="Fecha fin:"
           />
           <Textarea
+            name="description"
             classNames={{ inputWrapper: "bg-[#ffffff]" }}
             className="mt-2"
+            onChange={() => {}}
             minRows={7}
             label="Descripción de convocatoria:"
           />

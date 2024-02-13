@@ -7,7 +7,7 @@ export default function Announcementpage() {
     <>
       <main>
         <Header />
-        <p className="text-center mt-[90px] text-3xl text-primary font-semibold">
+        <p className="text-center mt-[90px] mb-4 text-3xl text-primary font-semibold">
           Información de Convocatorias
         </p>
         <Announcement />
