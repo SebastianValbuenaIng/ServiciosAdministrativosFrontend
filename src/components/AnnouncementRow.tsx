@@ -1,23 +1,25 @@
 import { candidate } from "@/types/d";
-import { Accordion, AccordionItem, Divider, Textarea } from "@nextui-org/react";
+import { Accordion, AccordionItem, Divider } from "@nextui-org/react";
+import Textarea from "./forms/TextareaForm";
 
 const AnnouncementRow = ({ candidates }: { candidates: candidate[] }) => {
   return (
     <>
       <div>
-        <Accordion variant="bordered" >
-          {candidates.map((candidate) => (
+        <Accordion variant="bordered">
+          {candidates.map((candidate, i) => (
             <AccordionItem
+            key={i}
               title={candidate.id + " - " + candidate.nombre_aspirante}
               subtitle={`Fecha inscripción: ${candidate.fecha_inscripcion}`}
             >
               <div>
-              <Divider className="my-3 mb-5" />
+                <Divider className="my-3 mb-5" />
                 <p className="m-2 text-primary font-medium text-center text-xl">
                   {" "}
                   Detalles del aspirante{" "}
                 </p>
-                <div className="flex flex-wrap gap-3 items-center justify-between mx-4">
+                <div className="flex flex-wrap md:gap-3 items-center justify-between mx-4">
                   <div>
                     <p>
                       <b>Nombre: </b> {candidate.nombre_aspirante}
@@ -48,13 +50,11 @@ const AnnouncementRow = ({ candidates }: { candidates: candidate[] }) => {
                   </div>
                 </div>
                 <div className="my-4 mx-4 md:mx-10">
-                    <Textarea
-                    classNames={{inputWrapper: "bg-[#ffffff]"}}
-                      maxRows={6}
-                      label={"Observación:"}
-                      variant="bordered"
-                      labelPlacement="outside"
-                    ></Textarea>
+                  <Textarea
+                    name="observation"
+                    classNames={{ inputWrapper: "bg-[#ffffff]" }}
+                    label={"Observación:"}
+                  ></Textarea>
                 </div>
               </div>
             </AccordionItem>

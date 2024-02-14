@@ -57,7 +57,7 @@ export default function MenuMobile() {
 									<button
 										onClick={() =>
 											router.push(
-												"/https://empleados.escuelaing.edu.co/intraeci/"
+												"/announcement"
 											)
 										}
 										className={`${
