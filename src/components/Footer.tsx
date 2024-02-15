@@ -20,7 +20,7 @@ const Footer = () => {
 						onClick={() => window.location.reload()}
 					/>
 				</div>
-				<p className="mt-4 text-sm text-gray font-semibold">
+				<p className="mt-4 text-sm text-center md:text-left text-gray font-semibold">
 					Todos los derechos reservados ©2024 - Escuela Colombiana de Ingeniería
 					Julio Garavito. Personería Jurídica 086 de enero 19 de 1973.
 					Renovación de Acreditación Institucional de Alta Calidad. Resolución

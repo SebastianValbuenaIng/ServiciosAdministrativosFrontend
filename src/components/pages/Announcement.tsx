@@ -56,7 +56,7 @@ const Announcement = () => {
         isOpen={showModal}
         setIsOpen={setShowModal}
         classContainer={
-          contenModal === "edit" ? "max-w-[1000px]" : "max-w-[750px]"
+          contenModal === "edit" ? "max-w-[800px]" : "max-w-[750px]"
         }
       >
         <i

@@ -10,11 +10,11 @@ import SelectForm from "./forms/SelectForm";
 const AnnouncementEdit = ({ selectedRow }: { selectedRow: Announcement }) => {
   return (
     <>
-      <p className="mb-2 text-primary md:ml-14 text-start text-sm select-none">
+      <p className="mb-2 text-primary ml-2 text-start text-sm select-none">
         Campos obligatorios (<i className="bi bi-asterisk text-xs"></i>)
       </p>
-      <div className="flex flex-wrap mx-auto items-center justify-between">
-        <div className="w-[450px] mx-auto">
+      <div className="grid grid-cols-1 md:flex mx-auto p-4 gap-4 justify-between">
+        <div className="w-full mx-auto">
           <InputForm
             name="name"
             onChange={() => {}}
@@ -71,7 +71,7 @@ const AnnouncementEdit = ({ selectedRow }: { selectedRow: Announcement }) => {
             label="Director del área:"
           />
         </div>
-        <div className="w-[450px] mx-auto">
+        <div className="w-full mx-auto">
           <SelectForm
             name="name"
             onChange={() => {}}

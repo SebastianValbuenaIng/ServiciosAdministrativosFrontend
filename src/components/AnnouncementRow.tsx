@@ -9,7 +9,7 @@ const AnnouncementRow = ({ candidates }: { candidates: candidate[] }) => {
         <Accordion variant="bordered">
           {candidates.map((candidate, i) => (
             <AccordionItem
-            key={i}
+              key={i}
               title={candidate.id + " - " + candidate.nombre_aspirante}
               subtitle={`Fecha inscripción: ${candidate.fecha_inscripcion}`}
             >
@@ -19,7 +19,7 @@ const AnnouncementRow = ({ candidates }: { candidates: candidate[] }) => {
                   {" "}
                   Detalles del aspirante{" "}
                 </p>
-                <div className="flex flex-wrap md:gap-3 items-center justify-between mx-4">
+                <div className="flex flex-wrap md:gap-3 md:mx-10 items-center justify-between mx-4">
                   <div>
                     <p>
                       <b>Nombre: </b> {candidate.nombre_aspirante}
