@@ -113,6 +113,37 @@ input[type="date"]::-webkit-calendar-picker-indicator
     opacity: 100
     display: block
 
+.file-input__input
+    width: 0.1px
+    height: 0.1px
+    opacity: 0
+    overflow: hidden
+    z-index: -1
+
+.file-input__label
+    min-width: 150px
+    cursor: pointer
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    border-radius: 20px
+    font-size: 14px
+    font-weight: 600
+    color: $primary
+    font-size: 14px
+    padding: 10px 12px
+    border: 2px dotted $primary
+
+    &:hover
+        background-color: $hover
+        transition-property: all
+        transition-timing-function: ease
+        transition-duration: 250ms
+
+    & svg
+        height: 16px
+        margin-right: 4px
+
 *
     margin: 0
     padding: 0
@@ -228,42 +259,3 @@ input[type="date"]::-webkit-calendar-picker-indicator
 
 .main-class
     margin-block-end: 170px
-
-.image-login
-    background-image: url('/images/LoginImage.jpg')
-    background-repeat: no-repeat
-    background-attachment: fixed
-
-.back
-    background: url('../../public/images/bloque_i.jpg')
-    background-size: cover
-    background-position: center
-    background-repeat: no repeat
-
-.back2
-    background: url('../../public/images/admin_1.jpg')
-    background-size: cover
-    background-position: center
-    background-repeat: no repeat
-
-.back3
-    background: url('../../public/images/prof_2.jpg')
-    position: absolute
-    background-size: cover
-    background-position: center
-    background-repeat: no repeat
-
-@media (max-width: 1023px)
-    .back
-        background: none
-        background-color: #eeeded
-    .back2
-        background: none
-        background-color: #eeeded
-    .back3
-        background: none
-        background-color: #eeeded
-    .margin-header
-        padding-block-end: 215px
-    .main-class
-        margin-block-end: 200px

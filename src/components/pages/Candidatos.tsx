@@ -1,6 +1,5 @@
 "use client";
 
-import fetchFn from "@/libs/fetchFn";
 import { Candidato } from "@/types/d";
 import { useState } from "react";
 import Modal from "../Modal";
@@ -11,6 +10,7 @@ import Image from "next/image";
 import { RadioGroup } from "@headlessui/react";
 import { CheckIcon } from "@heroicons/react/20/solid";
 import Button from "../Button";
+import fetchFn from "@/utils/fetchFn";
 
 interface Props {
     candidatos: Candidato[];

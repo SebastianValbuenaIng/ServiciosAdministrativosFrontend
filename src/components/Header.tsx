@@ -2,57 +2,21 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { signOut, useSession } from "next-auth/react";
 import Menu from "@/components/Menu";
 import Modal from "./Modal";
 import Link from "next/link";
-
+import { useRouter } from "next/navigation";
 const Header = () => {
-    const { data } = useSession();
     const [showModal, setShowModal] = useState<boolean>(false);
+
+    const router = useRouter();
+
+    const cerrarSesion = () => {
+        router.push('https://empleados.escuelaing.edu.co/intraeci/Menu');
+    }
 
     return (
         <header className="fixed top-0 left-0 right-0  w-full h-[65px] text-start shadow-sm bg-gray-box border-b border-borders-light z-40 select-none">
-            <Modal
-                isOpen={showModal}
-                setIsOpen={setShowModal}
-                classContainer="max-w-[450px]"
-            >
-                <>
-                    <h1 className="flex flex-col mt-4 mb-6 text-xl font-semibold text-primary text-center gap-1 outline-none">
-                        Cerrar sesión
-                    </h1>
-                    <div>
-                        <p className="text-lg text-center items-center justify-center rounded-lg outline-none">
-                            ¿Seguro que quiere cerrar sesión?
-                        </p>
-                    </div>
-                    <div className="flex items-center gap-7 pb-3 justify-center text-center">
-                        <div className="mt-5">
-                            <button
-                                onClick={() => {
-                                    signOut({ callbackUrl: "/" });
-                                }}
-                                type="button"
-                                className="inline-flex font-base hover:text-primary outline-none hover:font-bold border-none transition-all justify-center rounded-lg px-4 text-lg"
-                            >
-                                Cerrar sesión
-                            </button>
-                        </div>
-                        <div className="mt-5">
-                            <button
-                                type="button"
-                                className="inline-flex font-base hover:font-bold outline-none border-none transition-all justify-center rounded-lg px-4 text-lg"
-                                onClick={() => {
-                                    setShowModal(false);
-                                }}
-                            >
-                                Cancelar
-                            </button>
-                        </div>
-                    </div>
-                </>
-            </Modal>
             <nav className="mx-auto flex items-center justify-between container-class gap-4">
                 <section className="h-[65px] flex justify-between">
                     <Link href={"/"}>
@@ -106,13 +70,13 @@ const Header = () => {
                 <Menu />
 
                 {/* Botón de cerrar sesión */}
-                <section className="h-[65px] flex justify-start">
+                <section className="h-[65px] flex justify-start flex-col">
                     <button
                         className="bg-primary w-[140px] h-10 items-center p-1 my-3 hidden lg:block hover:bg-dark-primary text-off-white justify-center rounded-xl"
-                        onClick={() => setShowModal(true)}
+                        onClick={cerrarSesion}
                     >
                         <i className="bi bi-box-arrow-right mr-2 mt-3 sm:text-base "></i>
-                        Cerrar Sesión
+                        Salir
                     </button>
                 </section>
             </nav>

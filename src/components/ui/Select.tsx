@@ -20,6 +20,7 @@ interface Props {
     isRequired?: boolean;
     label?: string | boolean;
     classNames?: any;
+    scrollRef?: any;
 }
 
 const Select = ({
@@ -39,10 +40,12 @@ const Select = ({
     children,
     isRequired = false,
     label,
-    classNames
+    classNames,
+    scrollRef
 }: Props) => {
     return (
         <SelectNextUi
+            isMultiline
             aria-label={name}
             size="md"
             startContent={
@@ -80,6 +83,7 @@ const Select = ({
             }
             isRequired={isRequired}
             label={label}
+            scrollRef={scrollRef}
         >
             {children}
         </SelectNextUi>

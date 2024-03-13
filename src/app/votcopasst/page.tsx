@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Candidatos from "@/components/pages/Candidatos";
-import fetchFn from "@/libs/fetchFn";
+import fetchFn from "@/utils/fetchFn";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 

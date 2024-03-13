@@ -1,4 +1,5 @@
 import { Input as InputNextUi } from "@nextui-org/react";
+import Icon from "../Icon";
 
 const Input: React.FC<{
     type?: string;
@@ -14,6 +15,7 @@ const Input: React.FC<{
     label?: string | boolean;
     isRequired: boolean;
     classNames?: any;
+    icon?: string;
 }> = ({
     className,
     type = "text",
@@ -27,13 +29,17 @@ const Input: React.FC<{
     label,
     isRequired,
     classNames,
-    placeholder
+    placeholder,
+    icon
 }) => {
         return (
             <InputNextUi
+                startContent={
+                    icon && <Icon icon={icon} className={error ? "text-red" : "text-dark-green"} />
+                }
                 isClearable={clearable}
                 variant="faded"
-                classNames={classNames}
+                classNames={({ ...classNames, errorMessage: 'text-xs' })}
                 className={className}
                 isDisabled={disabled}
                 isInvalid={error ? true : false}

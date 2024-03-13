@@ -23,6 +23,20 @@ export interface Validations {
 	};
 }
 
+export interface TypeUseValidateForm {
+    setField: ({ name, value, }: {
+        name: string;
+        value: string | number | null;
+    }) => void;
+    data: any;
+    validData: boolean;
+    isReady: boolean;
+    setReady: () => void;
+    loadData: (data: any) => void;
+    resetData: () => void;
+    validators: (nameField: string) => Validations | undefined;
+}
+
 export const validateValue = (
 	value: string | null,
 	validations: Validations | undefined
@@ -115,7 +129,7 @@ const useValidateForm = <TState>(
 		validations?: Validations;
 	}[],
 	chargeData?: boolean
-) => {
+) : TypeUseValidateForm => {
 	const createInitialState = () => {
 		const objInitialState: any = {};
 

@@ -1,13 +1,14 @@
 import { redirect } from "next/navigation";
 import Image from "next/image";
 import { getServerSession } from "next-auth";
-import fetchFn from "@/libs/fetchFn";
 import Header from "@/components/Header";
 import OptionCards from "@/components/OptionCards";
 import Footer from "@/components/Footer";
 import { optionsCards } from "@/data";
 import { AddStore } from "@/components/store/AddStore";
 import { PersonaActiva } from "@/types";
+import { NamePerson } from "@/components/data/NamePerson";
+import fetchFn from "@/utils/fetchFn";
 
 export default async function Index() {
     const session = await getServerSession();
@@ -20,7 +21,7 @@ export default async function Index() {
         email: "",
         tipoDocumento: ""
     };
-    
+
     if (session) {
         const email = session.user?.email || "";
         const domain = email.split("@")[1];
@@ -37,7 +38,7 @@ export default async function Index() {
     return (
         <>
             <Header />
-            <AddStore infoPersona={infoPersona}/>
+            <AddStore infoPersona={infoPersona} />
             <main>
                 <div className="mt-20 mx-[500px] justify-center items-center rounded-xl">
                     <Image
@@ -48,9 +49,12 @@ export default async function Index() {
                         alt="ImagenRef"
                     />
                 </div>
-                <p className="mt-5 text-center text-3xl mb-10 text-primary font-semibold select-none">
+                <p className="mt-5 text-center text-3xl mb-5 text-primary font-semibold select-none">
                     Seleccione un servicio
                 </p>
+                <div>
+                    <NamePerson />
+                </div>
                 <div className="mx-auto w-[95%] max-w-[1500px] gap-8 mt-5 mb-10 flex flex-wrap justify-center">
                     {
                         optionsCards.map(option => <OptionCards key={option.text} text={option.text} icon={option.icon} route={option.route} />)

@@ -19,6 +19,8 @@ const config: Config = {
             borders: "#686868",
             "borders-light": "#cccccc",
             "soft-gray": "#4A4A4A",
+            "softw-gray": "#8B8B8B",
+            "text-gray": "#898989",
             gray: "#3B3B3B",
             "gray-box": "#ecebeb",
             "dark-gray": "#2B2B2B",

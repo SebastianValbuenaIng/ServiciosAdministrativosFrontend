@@ -10,6 +10,7 @@ interface Options {
 async function fetchFn(endpoint: string, options?: Options) {
 	try {
 		const { externalUrl, cache, method, body } = options ?? {};
+
 		const res = await fetch(
 			externalUrl ? endpoint : process.env.NEXT_PUBLIC_API_URL + endpoint,
 			{

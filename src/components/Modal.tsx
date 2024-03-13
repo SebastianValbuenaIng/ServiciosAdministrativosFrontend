@@ -8,15 +8,24 @@ interface Props {
     setIsOpen: (value: SetStateAction<boolean>) => void;
     classContainer?: string;
     children: React.ReactNode;
+    closeDisabled?: boolean;
 }
 
-const Modal = ({ isOpen, setIsOpen, classContainer = "", children }: Props) => {
+const Modal = ({
+    isOpen,
+    setIsOpen,
+    closeDisabled,
+    classContainer = "",
+    children,
+}: Props) => {
     return (
         <Transition appear show={isOpen} as={Fragment}>
             <Dialog
                 as="section"
                 className="relative z-50"
-                onClose={() => setIsOpen(false)}
+                onClose={() => {
+                    closeDisabled ? undefined : setIsOpen(false);
+                }}
             >
                 <Transition.Child
                     as={Fragment}

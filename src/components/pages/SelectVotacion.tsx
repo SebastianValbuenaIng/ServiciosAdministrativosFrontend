@@ -6,8 +6,8 @@ import { useSession } from "next-auth/react";
 import { TailSpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
 import Header from "@/components/Header";
-import fetchFn from "@/libs/fetchFn";
 import ButtonVot from "@/components/pages/ButtonVot";
+import fetchFn from "@/utils/fetchFn";
 
 export default function SelectVotacion({ error }: { error?: string }) {
     const { data: session, status } = useSession();
