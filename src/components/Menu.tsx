@@ -1,13 +1,10 @@
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { useRouter } from "next/navigation";
+import { signOut } from "next-auth/react";
 
 export default function MenuMobile() {
     const router = useRouter();
-
-    const cerrarSesion = () => {
-        router.push('https://empleados.escuelaing.edu.co/intraeci/Menu');
-    }
 
     return (
         <div className="block lg:hidden absolute ml-[85%] ">
@@ -46,8 +43,8 @@ export default function MenuMobile() {
                                     <button
                                         onClick={() => router.push("/")}
                                         className={`${active
-                                                ? "bg-primary text-default-white"
-                                                : "text-custom-black"
+                                            ? "bg-primary text-default-white"
+                                            : "text-custom-black"
                                             } group flex w-full items-center rounded-md justify-center px-2 py-2 text-center`}
                                     >
                                         Inicio
@@ -63,8 +60,8 @@ export default function MenuMobile() {
                                             )
                                         }
                                         className={`${active
-                                                ? "bg-primary text-default-white"
-                                                : "text-custom-black"
+                                            ? "bg-primary text-default-white"
+                                            : "text-custom-black"
                                             } group flex w-full items-center rounded-md justify-center px-2 py-2 text-sm `}
                                     >
                                         Aplicantes convocatorias
@@ -82,8 +79,8 @@ export default function MenuMobile() {
                                             )
                                         }
                                         className={`${active
-                                                ? "bg-primary text-default-white"
-                                                : "text-custom-black"
+                                            ? "bg-primary text-default-white"
+                                            : "text-custom-black"
                                             } group flex w-full items-center rounded-md justify-center px-2 py-2 text-sm`}
                                     >
                                         SIACI
@@ -99,8 +96,8 @@ export default function MenuMobile() {
                                             )
                                         }
                                         className={`${active
-                                                ? "bg-primary text-default-white"
-                                                : "text-custom-black"
+                                            ? "bg-primary text-default-white"
+                                            : "text-custom-black"
                                             } group flex w-full items-center rounded-md justify-center px-2 py-2 text-sm`}
                                     >
                                         Planes
@@ -118,8 +115,8 @@ export default function MenuMobile() {
                                             )
                                         }
                                         className={`${active
-                                                ? "bg-primary text-default-white"
-                                                : "text-custom-black"
+                                            ? "bg-primary text-default-white"
+                                            : "text-custom-black"
                                             } group flex w-full items-center rounded-md justify-center px-2 py-2 text-sm`}
                                     >
                                         Presupuesto
@@ -133,8 +130,8 @@ export default function MenuMobile() {
                                             router.push("https://horus.escuelaing.edu.co/planeacion/")
                                         }
                                         className={`${active
-                                                ? "bg-primary text-default-white"
-                                                : "text-custom-black"
+                                            ? "bg-primary text-default-white"
+                                            : "text-custom-black"
                                             } group flex w-full items-center rounded-md justify-center px-2 py-2 text-sm`}
                                     >
                                         Proyectos
@@ -150,8 +147,8 @@ export default function MenuMobile() {
                                             )
                                         }
                                         className={`${active
-                                                ? "bg-primary text-default-white"
-                                                : "text-custom-black"
+                                            ? "bg-primary text-default-white"
+                                            : "text-custom-black"
                                             } group flex w-full items-center rounded-md justify-center px-2 py-2 text-sm`}
                                     >
                                         Descargas
@@ -162,13 +159,15 @@ export default function MenuMobile() {
                                 {({ active }) => (
                                     <button
 
-                                        onClick={cerrarSesion}
+                                        onClick={() => signOut({
+                                            redirect: false
+                                        })}
                                         className={`${active
-                                                ? "bg-primary text-default-white"
-                                                : "text-custom-black"
+                                            ? "bg-primary text-default-white"
+                                            : "text-custom-black"
                                             } group flex w-full items-center rounded-md justify-center px-2 py-2 text-sm`}
                                     >
-                                        Salir
+                                        Cerrar Sesión
                                     </button>
                                 )}
                             </Menu.Item>
